@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://anderl85:Peanut18@cluster0-lutup.mongodb.net/test?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://anderl85:Peanut18@cluster0-lutup.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "babyisanoldman"
 }
