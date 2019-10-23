@@ -8,6 +8,7 @@ import config from 'config';
 import User from './models/Users';
 //import { isError } from 'util';
 
+
 //init express app
 const app = express();
 
