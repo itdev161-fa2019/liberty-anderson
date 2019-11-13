@@ -23,7 +23,7 @@ const Register = () => {
 		if (password !== passwordConfirm) {
 			console.log('Passwords do not match');
 		}
-		else{
+		else {
 			const newUser = {
 				name: name,
 				email: email,
