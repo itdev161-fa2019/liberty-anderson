@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import { async } from 'q';
+//import { async } from 'q';
 
 const Login = ({ authenticateUser }) => {
 	let history = useHistory();
