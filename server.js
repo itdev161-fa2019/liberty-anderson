@@ -261,3 +261,35 @@ app.delete('/api/posts/:id', auth, async (req, res) => {
 		res.status(500).send('Server error');
 	}
 });
+
+/**
+ * @route PUT api/posts/:id
+ * @desc Update a post
+ */
+app.put('/api/posts/:id', auth, async (req, res) => {
+	try {
+		const { title, body } = req.body;
+		const post = await Post.findById(req.params.id);
+
+		//make sure post was found
+		if (!post) {
+			return res.status(404).json({ msg: 'Post not found' });
+		}
+
+		//make sure requesting user made post
+		if (post.user.toString() !== req.user.id) {
+			return res.status(401).json({ msg: 'User not authorized' });
+		}
+		
+		//update post & return
+		post.title = title || post.title;
+		post.body = body || post.body;
+
+		await post.save();
+
+		res.json(post);
+	} catch (error) {
+		console.error(error);
+		res.status(500).send('Server error');
+	}
+})
